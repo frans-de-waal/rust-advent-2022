@@ -1,6 +1,6 @@
 # Notes
 
-*[Bookmark](https://doc.rust-lang.org/book/ch00-00-introduction.html)*
+*[Bookmark](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)*
 
 ---
 
@@ -18,7 +18,7 @@ A command line tool for managing Rust versions and associated tools.
 
 The installation of Rust also includes a local copy of the documentation so that you can read it offline. Run `rustup doc` to open the local documentation in your browser.
 
-### Basics
+## Intro
 
 - Rust source files use the `.rs` file extension.
     - Convention is to use underscores for whitespace in filenames.
@@ -35,6 +35,7 @@ The installation of Rust also includes a local copy of the documentation so that
     - Creates a `Cargo.toml` file, Cargo's configuration file (*see [TOML](https://toml.io/en/)*).
     - Creates a `src` directory with a `main.rs` file.
     - Initialises a Git repository if not already in one.
+    - Use `cargo init` to initialise a new project in an existing directory.
 - Building and running a Cargo project
     - Build: `cargo build`
         - Creates an executable `target/debug/` directory (*default build is a debug build*).
@@ -43,10 +44,11 @@ The installation of Rust also includes a local copy of the documentation so that
     - `cargo check` quickly checks your code to make sure it compiles but doesn’t produce an executable.
     - Build (and optimise) for release: `cargo build --release`. 
         - Will create an executable in `/target/release`
+- [Reserved words in Rust](https://doc.rust-lang.org/book/appendix-01-keywords.html)
 
-### Package configuration
+## Package configuration
 
-#### `[package]`
+### `[package]`
 
 Section defining the project.
 
@@ -54,6 +56,40 @@ Section defining the project.
 - `version`: Version of the project.
 - `edition`: Edition of Rust to use.
 
-#### `[dependencies]`
+### `[dependencies]`
 
 Dependencies for the the project. Packages of code are referred to as *crates*.
+
+## Variables and Mutability
+
+[Docs](https://doc.rust-lang.org/book/ch03-01-variables-and-mutability.html)
+
+```rust
+let x = 5;
+```
+
+Variables are immutable by default.
+
+- Use the `mut` keyword before the variable name to make mutable.
+
+## Constants
+
+Constant are always immutable.
+
+```rust
+const X: u32 = 5;
+```
+
+- The type of the value *must* be annotated.
+- Constants may be set only to a constant expression, not the result of a value that could only be computed at runtime.
+
+## Data Types
+
+[Docs](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+
+### Strings
+
+[Docs](https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings)
+
+## Shadowing
+
