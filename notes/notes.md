@@ -91,5 +91,19 @@ const X: u32 = 5;
 
 [Docs](https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings)
 
+String slice: `str`
+
+Split a string:
+- By separator: `str.split('separator')`
+- By whitespace: `str.split_whitespace()` or `str.split_ascii_whitespace()`
+- By line: `str.lines()`
+
 ## Shadowing
 
+## Reading files
+
+[Docs](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)
+
+`std::fs` to handle files.
+
+`fs::read_to_string(FILE_PATH)` to read to a string.
