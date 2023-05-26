@@ -107,3 +107,30 @@ Split a string:
 `std::fs` to handle files.
 
 `fs::read_to_string(FILE_PATH)` to read to a string.
+
+## Command line arguments
+
+[Docs](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html#reading-the-argument-values)
+
+```rust
+use std::env;
+
+let args: Vec<String> = env::args().collect();
+```
+
+*Note: name of binary invoked will always be the first argument*
+
+## Hash Map
+
+```rust
+use std::collections::HashMap
+
+let my_map = HashMap::new();
+
+// add an entry
+my_map.insert(String::from("my_key"), 10);
+
+// read an entry
+let key = String::from("my_key");
+let value = my_map.get(&key).copied().unwrap_or(0);
+```
