@@ -91,7 +91,30 @@ const X: u32 = 5;
 
 [Docs](https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings)
 
-String slice: `str`
+#### String
+
+```rust
+let my_string =  String::from("My String");
+```
+
+or
+
+```rust
+let mut my_string = String::new();
+```
+
+#### String literal
+
+```rust
+let my_literal_string = "My String";
+let my_string = my_literal_string.to_string();
+```
+
+#### String slice
+
+```rust
+let string_part = &my_string[0..5]; // first 5 bytes of the string
+```
 
 Split a string:
 - By separator: `str.split('separator')`
